@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Tarefa implements Comparable<Tarefa>{
+    String titulo;
+
+    public Tarefa(String titulo){
+        this.titulo = titulo;
+    }
+    public int compareTo(Tarefa outra){
+        return this.titulo.compareTo(outra.titulo);
+    }
+
+    @Override
+    public String toString() {
+        return titulo;
+    }
+
+    public static void main(String[] args) {
+        List<Tarefa> tarefas = new ArrayList<>();
+        tarefas.add(new Tarefa("Estudas"));
+        tarefas.add(new Tarefa("Almocar"));
+        tarefas.add(new Tarefa("Dormir"));
+        Collections.sort(tarefas);
+        System.out.println(tarefas);
+
+    }
+}
